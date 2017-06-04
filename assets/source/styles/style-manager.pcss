@@ -1,3 +1,18 @@
+@charset 'UTF-8';
+
+/* Порядок сборки
+@import 'variables.pcss';
+@import 'default.pcss'; */
+
+/* Переменные */
+$helvetica: "Helvetica Neue", Arial, sans-serif;
+
+$link: blue;
+$link-hover: red;
+
+@custom-media --latex-tablet (width <= 1000px);
+@custom-media --latex-mobile (width <= 640px);
+
 /* Дефолтные стили */
 * {
   box-sizing: border-box;

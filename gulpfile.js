@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     portfinder = require('portfinder'),
     postcss = require('gulp-postcss'),
     precss = require('precss'),
+    nested = require('postcss-nested'),
     cssnext = require('postcss-cssnext'),
     nano = require('gulp-cssnano'),
     browserSync = require("browser-sync"),
@@ -27,7 +28,8 @@ var gulp = require('gulp'),
 var processors = [
   precss(),
   cssnext(),
-  inline()
+  inline(),
+  nested()
 ];
 
 // Ресурсы проекта
@@ -79,7 +81,7 @@ gulp.task('watch', function() {
 // Шаблонизация
 gulp.task('pug', function() {
   gulp.src(paths.templates + '*.pug')
-    .pipe(cache('temps'))
+    // .pipe(cache('temps')) что бы изменение блоков вызывало перезагрузку страниц
     .pipe(plumber({errorHandler: onError}))
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest(paths.html));
@@ -87,7 +89,7 @@ gulp.task('pug', function() {
 
 // Компиляция стилей, добавление префиксов
 gulp.task('styles', function () {
-  gulp.src(paths.styles + 'style.pcss')
+  gulp.src(paths.styles + 'style-manager.pcss')
     .pipe(plumber({errorHandler: onError}))
     .pipe(postcss(processors))
     .pipe(rename('style.css'))
