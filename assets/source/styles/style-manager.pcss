@@ -4,47 +4,9 @@
 @import 'variables.pcss';
 @import 'default.pcss'; */
 
-/* Переменные */
-$helvetica: "Helvetica Neue", Arial, sans-serif;
-
-$link: blue;
-$link-hover: red;
-
-@custom-media --latex-tablet (width <= 1000px);
-@custom-media --latex-mobile (width <= 640px);
-
-/* Дефолтные стили */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   text-size-adjust: none;
-}
-
-/* Формы */
-input, textarea, button {
-  outline: none;
-  font-family: $helvetica;
-}
-
-/* Аккуратные таблицы */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* Основные стили */
-html {
-  background: rgba(255, 255, 255, 1);
-}
-
-body {
-  font-family: $helvetica;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-/* Ссылки без дефолтного подчёркивания */
-a {
-  text-decoration: none;
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Список страниц</title>
+    <link rel="stylesheet" type="text/css" href="overview/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__logo">
+        <img src="overview/img/logo.png">
+      </div>
+      <div class="container__content">
+        <!-- <a href="./styleguide/index.html" class="container__banner">
+          <img src='overview/img/banner.png'>
+        </a> -->
+        <div class="container__subtitle">Список файлов</div>
+        <div class="container__list">
+          <% @data.each do |item| %>
+            <div class="container__list-item">
+              <a href="<%= item[:url]%>" class="link">
+                <%= item[:name] %>
+              </a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
